@@ -1,5 +1,5 @@
 <script setup>
-import FormU_Element from '../components/FormU_Element.vue';
+import FormU_Element from '../components/Form_Element.vue';
 
 </script>
 
@@ -7,7 +7,7 @@ import FormU_Element from '../components/FormU_Element.vue';
   <div class="title">
     <h1>Datos Control de Incidencia (Usuario Común)</h1>
   </div>
-  <FormU_Element />
+  <FormU_Element /> 
 </template>
 
 <style>

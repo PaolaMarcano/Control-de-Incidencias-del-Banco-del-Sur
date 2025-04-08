@@ -1,5 +1,5 @@
 <script setup>
-import FormD_Element from '../components/FormD_Element.vue';
+import FormD_Element from '../components/Form_Element.vue';
 
 </script>
 
@@ -8,7 +8,7 @@ import FormD_Element from '../components/FormD_Element.vue';
   <div class="title">
     <h1>Datos Control de Incidencia (Parte del Equipo de Desarrollo)</h1>
   </div>
-  <FormD_Element />
+  <FormD_Element :es-desarrollador="true"  />
 </template>
 
 <style>

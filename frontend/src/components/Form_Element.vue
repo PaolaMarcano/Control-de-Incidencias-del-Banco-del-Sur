@@ -1,5 +1,15 @@
 <script setup>
 //import { defineProps, defineModel, ref, computed } from 'vue';
+import { defineProps, ref } from 'vue';
+
+const props = defineProps({
+  esDesarrollador: {
+    type: Boolean,
+    default: false // Valor por defecto si no se pasa el prop
+  }
+});
+
+const mostrarDesarrolladores = ref(props.esDesarrollador);
 
 </script>
 
@@ -9,13 +19,13 @@
       <label class="label_title">Datos Personales</label>
 
       <label for="nombre" class="label_sub_title">Nombre Completo</label>
-      <input class="input_element" type="text" name="nombre" />
+      <input required class="input_element" type="text" name="nombre" />
 
       <label for="telefono" class="label_sub_title">Teléfono</label>
-      <input class="input_element" type="tel" name="telefono" />
+      <input required class="input_element" type="tel" name="telefono" />
 
       <label for="correo" class="label_sub_title">Correo por el que quiere ser contactado</label>
-      <input class="input_element" type="gmail" name="correo" />
+      <input required class="input_element" type="gmail" name="correo" />
     </div>
   
     <div class="form_section">
@@ -25,37 +35,40 @@
       <input class="input_element" type="text" name="incidencia_titulo" />
 
       <label for="descripcion" class="label_sub_title">Descripción de la incidencia</label>
-      <textarea class="input_element" name="descripcion" ></textarea>
+      <textarea required class="input_element" name="descripcion" ></textarea>
 
       <label for="fecha_hora" class="label_sub_title">Fecha y hora de cuando ocurrió la incidencia</label>
-      <input class="input_element" type="datetime-local" name="fecha_hora" />
+      <input required class="input_element" type="datetime-local" name="fecha_hora" />
 
       <label for="ubicacion" class="label_sub_title">Ubicación del equipo o incidencia</label>
-      <input class="input_element" type="text" name="ubicacion" />
+      <input required class="input_element" type="text" name="ubicacion" />
 
-      <label for="id_equipo" class="label_sub_title">Número de identificación del equipo (Si es que lo tiene, no es obligatorio)</label>
-      <input class="input_element" type="text" name="id_equipo" />
+      <!-- Partes para desarrolladores -->
 
-      
-      <label class="label_sub_title">Asigne un equipo que se pueda hacer responsable de la gestión</label>
-      <label class="label_option" for="1_equipo">
-        <input type="radio" id="1_equipo" name="radio_equipo" />Equipo de Soporte Cajeros
-      </label>
-      <label class="label_option" for="2_equipo">
-        <input type="radio" id="2_equipo" name="radio_equipo" />Equipo de Soporte Banca en Línea
-      </label>
-      <label class="label_option" for="3_equipo">
-        <input type="radio" id="3_equipo" name="radio_equipo" />Equipo de Soporte Redes
-      </label>
+      <div class="section_dev" v-if="mostrarDesarrolladores">
+        <label for="id_equipo" class="label_sub_title">Número de identificación del equipo (Si es que lo tiene, no es obligatorio)</label>
+        <input class="input_element" type="text" name="id_equipo" />
+ 
+        <label class="label_sub_title">Asigne un equipo que se pueda hacer responsable de la gestión</label>
+        <label class="label_option" for="1_equipo">
+          <input type="radio" id="1_equipo" name="radio_equipo" required />Equipo de Soporte Cajeros
+        </label>
+        <label class="label_option" for="2_equipo">
+          <input type="radio" id="2_equipo" name="radio_equipo" />Equipo de Soporte Banca en Línea
+        </label>
+        <label class="label_option" for="3_equipo">
+          <input type="radio" id="3_equipo" name="radio_equipo" />Equipo de Soporte Redes
+        </label>
+      </div>
 
     </div>
 
-    <div class="form_section">
+    <div class="form_section" v-if="mostrarDesarrolladores">
 
       <label class="label_title">Clasificación, Categorías según el caso:</label>
       <label class="label_sub_title">Impacto en el negocio</label>
       <label class="label_option" for="1_impacto">
-        <input type="radio" id="1_impacto" name="radio_impacto" />Crítico (Problemas que impiden realizar operaciones bancarias esenciales)
+        <input type="radio" id="1_impacto" name="radio_impacto" required />Crítico (Problemas que impiden realizar operaciones bancarias esenciales)
       </label>
       <label class="label_option" for="2_impacto">
         <input type="radio" id="2_impacto" name="radio_impacto" />Alto (Problemas que afectan a un gran número de usuarios o procesos laborales
@@ -69,7 +82,7 @@
 
       <label class="label_sub_title">Tipo de incidencia</label>
       <label class="label_option" for="1_tipo_incidencia">
-        <input type="radio" id="1_tipo_incidencia" name="radio_tipo_incidencia" />Hardware
+        <input type="radio" id="1_tipo_incidencia" name="radio_tipo_incidencia" required />Hardware
       </label>
       <label class="label_option" for="2_tipo_incidencia">
         <input type="radio" id="2_tipo_incidencia" name="radio_tipo_incidencia" />Software
@@ -89,12 +102,12 @@
 
     </div>
 
-    <div class="form_section">
+    <div class="form_section" v-if="mostrarDesarrolladores">
 
       <label class="label_title">Priorización, Priorizar la urgencia de resolución de la incidencia</label>
       <label class="label_sub_title">Nivel de urgencia</label>
       <label class="label_option" for="1_N_urgencia">
-        <input type="radio" id="1_N_urgencia" name="radio_N_urgencia" />Alto
+        <input type="radio" id="1_N_urgencia" name="radio_N_urgencia" required />Alto
       </label>
       <label class="label_option" for="2_N_urgencia">
         <input type="radio" id="2_N_urgencia" name="radio_N_urgencia" />Medio
@@ -179,6 +192,11 @@ textarea{
 .submit_button:hover{
   background-color: #2fc3e7;
   color: #1B2B46;
+}
+
+.section_dev{
+  display: flex;
+  flex-direction: column;
 }
 
 </style>
