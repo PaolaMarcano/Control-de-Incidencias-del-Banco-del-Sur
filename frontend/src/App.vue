@@ -46,7 +46,7 @@
     font-weight: bold;
   }
   .link_elemento:hover{
-    color: #2fc3e7;
+    color:#a7e9fa;
   }
 
   .footer_bar{
