@@ -20,7 +20,7 @@ const mostrarDesarrolladores = ref(props.esDesarrollador);
 <template>
   <div class="ticket_container">
     <div class="ticket_botonera_section">
-      <button class="boton">Cerrar Incidencia</button>
+      <button class="boton" v-if="ticketData.estado != 'Cerrado'" >Cerrar Incidencia</button>
       <button class="boton">Eliminar</button>
     </div>
     <div class="ticket_Subcontainer">
