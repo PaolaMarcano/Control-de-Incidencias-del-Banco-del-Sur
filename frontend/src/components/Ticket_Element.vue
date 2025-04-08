@@ -15,10 +15,14 @@ const props = defineProps({
 
 const mostrarDesarrolladores = ref(props.esDesarrollador);
 
-const emit = defineEmits(['cerrar-incidencia']); // Define el evento que se emitirá
+const emit = defineEmits(['cerrar-incidencia', 'eliminar-ticket']); // Define el evento que se emitirá
 
 const cerrarTicket = () => {
   emit('cerrar-incidencia', props.ticketData); // Emite el evento con los datos del ticket (el padre decidirá cómo actualizar el estado)
+};
+
+const eliminarTicket = () => {
+    emit('eliminar-ticket', props.ticketData); // Emite el evento con los datos del ticket a eliminar
 };
 
 </script>
@@ -27,7 +31,7 @@ const cerrarTicket = () => {
   <div class="ticket_container">
     <div class="ticket_botonera_section">
       <button class="boton" v-if="ticketData.estado != 'Cerrado'" @click="cerrarTicket">Cerrar Incidencia</button>
-      <button class="boton">Eliminar</button>
+      <button class="boton" @click="eliminarTicket">Eliminar</button>
     </div>
     <div class="ticket_Subcontainer">
       <div class="ticket_section">

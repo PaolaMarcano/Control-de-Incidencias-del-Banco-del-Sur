@@ -15,6 +15,17 @@ const cerrarIncidenciaHandler = (ticketRecibido) => {
   }
 };
 
+const eliminarIncidenciaHandler = (ticketAEliminar) => {
+    // Encuentra el índice del ticket a eliminar comparando por referencia
+    const index = ticketsD.value.findIndex(ticket => ticket === ticketAEliminar);
+
+    if (index !== -1) {
+        // Crea un nuevo array sin el ticket a eliminar
+        ticketsD.value = ticketsD.value.filter(ticket => ticket !== ticketAEliminar);
+        console.log(`Incidencia ${ticketAEliminar.nombre} eliminada.`);
+    }
+};
+
 </script>
 
 
@@ -23,7 +34,12 @@ const cerrarIncidenciaHandler = (ticketRecibido) => {
     <h1>Tickets de Incidencias de Desarrolladores</h1>
   </div>
   <div v-for="(ticketD, indexD) in ticketsD" :key="indexD"  class="tickets_container">
-    <Ticket_Element :es-desarrollador="true" :ticketData="ticketD" @cerrar-incidencia="cerrarIncidenciaHandler" />
+    <Ticket_Element 
+      :es-desarrollador="true" 
+      :ticketData="ticketD" 
+      @cerrar-incidencia="cerrarIncidenciaHandler" 
+      @eliminar-ticket="eliminarIncidenciaHandler"
+    />
   </div>
 </template>
 
