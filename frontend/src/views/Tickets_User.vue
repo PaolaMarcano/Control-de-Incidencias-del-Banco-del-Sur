@@ -4,6 +4,17 @@ import Ticket_Element from '../components/Ticket_Element.vue';
 import { tickets_users } from '../../../server/tickets_user';
 const tickets = ref(tickets_users);
 
+const cerrarIncidenciaHandler = (ticketRecibido) => {
+  const index = tickets.value.findIndex(ticket => ticket === ticketRecibido);
+
+  if (index !== -1) {
+    tickets.value = tickets.value.map((ticket, i) =>
+      i === index ? { ...ticket, estado: 'Cerrado' } : ticket
+    );
+    console.log(`Incidencia ${tickets.value[index].nombre} cerrada.`);
+  }
+};
+
 </script>
 
 
@@ -12,7 +23,7 @@ const tickets = ref(tickets_users);
     <h1>Tickets de Incidencias de Usuarios</h1>
   </div>
   <div  v-for="(ticket, index) in tickets" :key="index"  class="tickets_container">
-    <Ticket_Element :ticketData="ticket" />
+    <Ticket_Element :ticketData="ticket" @cerrar-incidencia="cerrarIncidenciaHandler"/>
   </div>
 </template>
 

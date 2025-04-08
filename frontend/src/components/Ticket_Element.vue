@@ -1,6 +1,6 @@
 <script setup>
 
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
 
 const props = defineProps({
   esDesarrollador: {
@@ -15,12 +15,18 @@ const props = defineProps({
 
 const mostrarDesarrolladores = ref(props.esDesarrollador);
 
+const emit = defineEmits(['cerrar-incidencia']); // Define el evento que se emitirá
+
+const cerrarTicket = () => {
+  emit('cerrar-incidencia', props.ticketData); // Emite el evento con los datos del ticket (el padre decidirá cómo actualizar el estado)
+};
+
 </script>
 
 <template>
   <div class="ticket_container">
     <div class="ticket_botonera_section">
-      <button class="boton" v-if="ticketData.estado != 'Cerrado'" >Cerrar Incidencia</button>
+      <button class="boton" v-if="ticketData.estado != 'Cerrado'" @click="cerrarTicket">Cerrar Incidencia</button>
       <button class="boton">Eliminar</button>
     </div>
     <div class="ticket_Subcontainer">
@@ -49,8 +55,8 @@ const mostrarDesarrolladores = ref(props.esDesarrollador);
             <li><strong>Impacto en el negocio:</strong>{{ ticketData.impacto_en_el_negocio }}</li>
             <li><strong>Tipo de incidencia:</strong>{{ ticketData.tipo_de_incidencia }}</li>
             <li><strong>Priorización:</strong>{{ ticketData.priorizacion }}</li>
-            <li><strong>Estado:</strong>{{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
           </div>
+          <li><strong>Estado:</strong>{{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
 
         </ul>
       </div>

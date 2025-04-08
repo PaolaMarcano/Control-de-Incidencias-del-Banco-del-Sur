@@ -7,6 +7,7 @@ export let tickets_users = [
     descripcion: "El terminal del cajero automático no dispensa efectivo",
     fecha_y_hora: "2024-05-08 08:30 AM",
     ubicacion: "Sucursal Centro, Cajero #3",
+    estado: "En curso"
   },
   {
     nombre: "Ana Rodríguez",
@@ -16,6 +17,7 @@ export let tickets_users = [
     descripcion: "Al intentar pagar con mi tarjeta de débito, la transacción fue rechazada sin motivo aparente. Tenía fondos suficientes.",
     fecha_y_hora: "2024-05-08 09:15 AM",
     ubicacion: "Centro Comercial, Tienda #12",
+    estado: "En curso"
   },
   {
     nombre: "Carlos López",
@@ -25,5 +27,6 @@ export let tickets_users = [
     descripcion: "No puedo acceder a mi cuenta a través de la banca en línea. Ingreso mi usuario y contraseña correctamente, pero el sistema no me permite entrar.",
     fecha_y_hora: "2024-05-08 10:00 AM",
     ubicacion: "problema online",
+    estado: "En curso"
   },
 ]
