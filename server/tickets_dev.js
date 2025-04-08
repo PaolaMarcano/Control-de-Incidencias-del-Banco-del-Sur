@@ -1,0 +1,62 @@
+export let tickets_dev = [
+  {
+    nombre: "María García",
+    telefono: "555-5678",
+    correo: "mariagarcia@email.com",
+    titulo: "",
+    descripcion: "El sistema de banca en línea está mostrando un mensaje de error.",
+    fecha_y_hora: "2024-05-18 09:15 AM",
+    ubicacion: "Acceso desde navegador web",
+    identificador: "(Problema de servidor)",
+    responsable: "Equipo de Soporte Banca en Línea",
+    impacto_en_el_negocio: "Alto",
+    tipo_de_incidencia: "Software",
+    priorizacion: "Alto",
+    estado: "En curso"
+  },
+  {
+    nombre: "Sofía Gómez",
+    telefono: "555-3344",
+    correo: "sofiagomez@email.com",
+    titulo: "",
+    descripcion: "El sistema de banca en línea está mostrando un mensaje de error.",
+    fecha_y_hora: "2024-12-10 09:15 AM",
+    ubicacion: "Oficina de Créditos, Estación #12",
+    identificador: "EST-CRE-12",
+    responsable: "Equipo de Soporte Redes",
+    impacto_en_el_negocio: "Alto",
+    tipo_de_incidencia: "Red",
+    priorizacion: "Medio",
+    estado: "Cerrado"
+  },
+  {
+    nombre: "Pedro Vargas",
+    telefono: "555-3344",
+    correo: "pedrovargas@email.com",
+    titulo: "Cargos no reconocidos en mi estado de cuenta",
+    descripcion: "He detectado dos cargos en mi estado de cuenta que no reconozco haber realizado. Necesito información sobre estos movimientos.",
+    fecha_y_hora: "2024-05-08 01:30 PM",
+    ubicacion: "Revisión desde mi dispositivo móvil",
+    identificador: "EAT-CRE-12",
+    responsable: "Equipo de Soporte Redes",
+    impacto_en_el_negocio: "Alto",
+    tipo_de_incidencia: "Software",
+    priorizacion: "Alto",
+    estado: "En curso"
+  },
+  {
+    nombre: "Laura Torres",
+    telefono: "555-8899",
+    correo: "lauratorres@email.com",
+    titulo: "Tarjeta de crédito bloqueada sin notificación",
+    descripcion: "Mi tarjeta de crédito fue bloqueada y no recibí ninguna notificación previa. Necesito saber el motivo y cómo desbloquearla.",
+    fecha_y_hora: "2024-05-08 02:00 PM",
+    ubicacion: "Intento de pago en supermercado",
+    identificador: "EAT-CRE-12",
+    responsable: "Equipo de Soporte Redes",
+    impacto_en_el_negocio: "Alto",
+    tipo_de_incidencia: "Red",
+    priorizacion: "Medio",
+    estado: "Cerrado"
+  }
+]

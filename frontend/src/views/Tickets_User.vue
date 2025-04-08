@@ -1,5 +1,8 @@
 <script setup>
+import { ref } from 'vue';
 import Ticket_Element from '../components/Ticket_Element.vue';
+import { tickets_users } from '../../../server/tickets_user';
+const tickets = ref(tickets_users);
 
 </script>
 
@@ -8,12 +11,8 @@ import Ticket_Element from '../components/Ticket_Element.vue';
   <div class="title">
     <h1>Tickets de Incidencias de Usuarios</h1>
   </div>
-  <div class="tickets_container">
-    <Ticket_Element />
-    <Ticket_Element />
-    <Ticket_Element />
-    <Ticket_Element />
-    <Ticket_Element />
+  <div  v-for="(ticket, index) in tickets" :key="index"  class="tickets_container">
+    <Ticket_Element :ticketData="ticket" />
   </div>
 </template>
 

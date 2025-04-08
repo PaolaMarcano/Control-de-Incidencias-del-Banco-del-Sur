@@ -6,7 +6,11 @@ const props = defineProps({
   esDesarrollador: {
     type: Boolean,
     default: false // Valor por defecto si no se pasa el prop
-  }
+  },
+  ticketData: {
+    type: Object,
+    required: true
+  },
 });
 
 const mostrarDesarrolladores = ref(props.esDesarrollador);
@@ -23,29 +27,29 @@ const mostrarDesarrolladores = ref(props.esDesarrollador);
       <div class="ticket_section">
         <h2>Datos del usuario</h2>
         <ul>
-          <li><strong>Nombre:</strong> Juan Pérez</li>
-          <li><strong>Teléfono:</strong> 555-1234</li>
-          <li><strong>Correo:</strong> juanperez@email.com</li>
+          <li><strong>Nombre:</strong>{{ ticketData.nombre }}</li>
+          <li><strong>Teléfono:</strong>{{ ticketData.telefono }}</li>
+          <li><strong>Correo:</strong>{{ ticketData.correo }}</li>
         </ul>
       </div>
 
       <div class="ticket_section">
         <h2>Registro de la Incidencia</h2>
         <ul>
-          <li><strong>Título:</strong></li>
-          <li><strong>Descripción:</strong> El terminal del cajero automático no dispensa efectivo</li>
-          <li><strong>Fecha y hora:</strong> 2024-05-08 08:30 AM</li>
-          <li><strong>Ubicación:</strong> Sucursal Centro, Cajero #3</li>
+          <li><strong>Título:</strong>{{ ticketData.titulo }}</li>
+          <li><strong>Descripción:</strong>{{ ticketData.descripcion }}</li>
+          <li><strong>Fecha y hora:</strong>{{ ticketData.fecha_y_hora }}</li>
+          <li><strong>Ubicación:</strong>{{ ticketData.ubicacion }}</li>
 
           <!-- Partes para desarrolladores -->
         
           <div v-if="mostrarDesarrolladores">
-            <li><strong>Número de identificación del equipo:</strong> CAJ-CEN-03</li>
-            <li><strong>Equipo responsable de la gestión:</strong> Equipo de Soporte Cajeros</li>
-            <li><strong>Impacto en el negocio:</strong> Crítico</li>
-            <li><strong>Tipo de incidencia:</strong> Hardware</li>
-            <li><strong>Priorización:</strong> Alto</li>
-            <li><strong>Estado:</strong> Cerrado</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
+            <li><strong>Número de identificación del equipo:</strong>{{ ticketData.identificador }}</li>
+            <li><strong>Equipo responsable de la gestión:</strong>{{ ticketData.responsable }}</li>
+            <li><strong>Impacto en el negocio:</strong>{{ ticketData.impacto_en_el_negocio }}</li>
+            <li><strong>Tipo de incidencia:</strong>{{ ticketData.tipo_de_incidencia }}</li>
+            <li><strong>Priorización:</strong>{{ ticketData.priorizacion }}</li>
+            <li><strong>Estado:</strong>{{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
           </div>
 
         </ul>

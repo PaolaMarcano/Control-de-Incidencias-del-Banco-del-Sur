@@ -1,5 +1,8 @@
 <script setup>
+import { ref } from 'vue';
 import Ticket_Element from '../components/Ticket_Element.vue';
+import { tickets_dev } from '../../../server/tickets_dev';
+const ticketsD = ref(tickets_dev);
 
 </script>
 
@@ -8,12 +11,8 @@ import Ticket_Element from '../components/Ticket_Element.vue';
   <div class="title">
     <h1>Tickets de Incidencias de Desarrolladores</h1>
   </div>
-  <div class="tickets_container">
-    <Ticket_Element :es-desarrollador="true"  />
-    <Ticket_Element :es-desarrollador="true"  />
-    <Ticket_Element :es-desarrollador="true"  />
-    <Ticket_Element :es-desarrollador="true"  />
-    <Ticket_Element :es-desarrollador="true"  />
+  <div v-for="(ticketD, indexD) in ticketsD" :key="indexD"  class="tickets_container">
+    <Ticket_Element :es-desarrollador="true" :ticketData="ticketD" />
   </div>
 </template>
 
