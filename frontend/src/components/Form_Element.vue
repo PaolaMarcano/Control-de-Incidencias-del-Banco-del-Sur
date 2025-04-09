@@ -81,35 +81,35 @@ const handleSubmit = () => {
       <label class="label_title">Datos Personales</label>
 
       <label for="nombre" class="label_sub_title">Nombre Completo</label>
-      <input v-model="nombre" required class="input_element" type="text" name="nombre" />
+      <input id="cy_nombre" v-model="nombre" required class="input_element" type="text" name="nombre" />
 
       <label for="telefono" class="label_sub_title">Teléfono</label>
-      <input v-model="telefono" required class="input_element" type="tel" name="telefono" />
+      <input id="cy_telefono" v-model="telefono" required class="input_element" type="tel" name="telefono" />
 
       <label for="correo" class="label_sub_title">Correo por el que quiere ser contactado</label>
-      <input v-model="correo" required class="input_element" type="gmail" name="correo" />
+      <input id="cy_correo" v-model="correo" required class="input_element" type="gmail" name="correo" />
     </div>
   
     <div class="form_section">
       <label class="label_title">Registro de la Incidencia</label>
 
       <label for="incidencia_titulo" class="label_sub_title">Título de la incidencia (No es obligatorio)</label>
-      <input v-model="incidencia_titulo" class="input_element" type="text" name="incidencia_titulo" />
+      <input id="cy_titulo" v-model="incidencia_titulo" class="input_element" type="text" name="incidencia_titulo" />
 
       <label for="descripcion" class="label_sub_title">Descripción de la incidencia</label>
-      <textarea v-model="descripcion" required class="input_element" name="descripcion" ></textarea>
+      <textarea id="cy_descripcion" v-model="descripcion" required class="input_element" name="descripcion" ></textarea>
 
       <label for="fecha_hora" class="label_sub_title">Fecha y hora de cuando ocurrió la incidencia</label>
-      <input v-model="fecha_hora" required class="input_element" type="datetime-local" name="fecha_hora" />
+      <input id="cy_fecha_hora" v-model="fecha_hora" required class="input_element" type="datetime-local" name="fecha_hora" />
 
       <label for="ubicacion" class="label_sub_title">Ubicación del equipo o incidencia</label>
-      <input v-model="ubicacion" required class="input_element" type="text" name="ubicacion" />
+      <input id="cy_ubicacion" v-model="ubicacion" required class="input_element" type="text" name="ubicacion" />
 
       <!-- Partes para desarrolladores -->
 
       <div class="section_dev" v-if="mostrarDesarrolladores">
         <label for="id_equipo" class="label_sub_title">Número de identificación del equipo (Si es que lo tiene, no es obligatorio)</label>
-        <input v-model="id_equipo" class="input_element" type="text" name="id_equipo" />
+        <input  id="cy_id_equipo" v-model="id_equipo" class="input_element" type="text" name="id_equipo" />
  
         <label class="label_sub_title">Asigne un equipo que se pueda hacer responsable de la gestión</label>
         <label class="label_option" for="1_equipo">
