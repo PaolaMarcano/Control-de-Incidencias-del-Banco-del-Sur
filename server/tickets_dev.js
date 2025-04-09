@@ -12,7 +12,10 @@ export let tickets_dev = [
     impacto_en_el_negocio: "Alto",
     tipo_de_incidencia: "Software",
     priorizacion: "Alto",
-    estado: "En curso"
+    estado: "En curso",
+    causas: "Error en la comunicación con la base de datos del servidor.",
+    reporte: "El usuario reporta mensaje de error al intentar acceder a su cuenta en línea.",
+    resolucion: "Se reinició el servidor de la base de datos y se restableció la conexión. Se monitorea el sistema para asegurar la estabilidad."
   },
   {
     nombre: "Sofía Gómez",
@@ -27,7 +30,10 @@ export let tickets_dev = [
     impacto_en_el_negocio: "Alto",
     tipo_de_incidencia: "Red",
     priorizacion: "Medio",
-    estado: "Cerrado"
+    estado: "Cerrado",
+    causas: "Interrupción temporal del servicio de internet en la sucursal.",
+    reporte: "Personal de la oficina reporta la imposibilidad de acceder al sistema en línea. Se verifica la conexión de red local.",
+    resolucion: "Se contactó al proveedor de internet y se restableció la conexión. Se verificó el acceso al sistema."
   },
   {
     nombre: "Pedro Vargas",
@@ -42,7 +48,10 @@ export let tickets_dev = [
     impacto_en_el_negocio: "Alto",
     tipo_de_incidencia: "Software",
     priorizacion: "Alto",
-    estado: "En curso"
+    estado: "En curso",
+    causas: "Investigando posible fraude o error en el procesamiento de transacciones.",
+    reporte: "Cliente reporta cargos no reconocidos en su estado de cuenta. Se solicita revisión de los registros de transacciones.",
+    resolucion: "En investigación. Se contactará al cliente con los hallazgos y los pasos a seguir."
   },
   {
     nombre: "Laura Torres",
@@ -57,6 +66,9 @@ export let tickets_dev = [
     impacto_en_el_negocio: "Alto",
     tipo_de_incidencia: "Red",
     priorizacion: "Medio",
-    estado: "Cerrado"
+    estado: "Cerrado",
+    causas: "Bloqueo preventivo por actividad sospechosa detectada por el sistema de seguridad.",
+    reporte: "Cliente reporta bloqueo de tarjeta al intentar realizar un pago. No recibió notificación previa del bloqueo.",
+    resolucion: "Se verificó la actividad sospechosa y se confirmó el bloqueo preventivo. Se contactó a la cliente para verificar su identidad y se procedió al desbloqueo de la tarjeta."
   }
 ]

@@ -16,6 +16,9 @@ describe('Test formulario usuario', () => {
     cy.get('#3_impacto').click()
     cy.get('#2_tipo_incidencia').click()
     cy.get('#2_N_urgencia').click()
+    cy.get('#cy_causas').type("Error en la comunicación con la base de datos del servidor.")
+    cy.get('#cy_reporte').type("El usuario reporta mensaje de error al intentar acceder a su cuenta en línea.")
+    cy.get('#cy_resolucion').type("Se reinició el servidor de la base de datos y se restableció la conexión. Se monitorea el sistema para asegurar la estabilidad.")
     cy.contains('button', 'Enviar').click()//Enviar formulario
     cy.contains('p', 'Incidencia registrada')
   })

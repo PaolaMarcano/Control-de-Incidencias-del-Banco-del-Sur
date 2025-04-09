@@ -27,6 +27,9 @@ const radio_equipo = ref('');
 const radio_impacto = ref('');
 const radio_tipo_incidencia = ref('');
 const radio_N_urgencia = ref('');
+const causas = ref('');
+const reporte = ref('');
+const resolucion = ref('');
 
 const handleSubmit = () => {
   // Crear un objeto con los datos del formulario
@@ -48,12 +51,17 @@ const handleSubmit = () => {
     nuevoTicket.impacto_en_el_negocio = radio_impacto.value;
     nuevoTicket.tipo_de_incidencia = radio_tipo_incidencia.value;
     nuevoTicket.priorizacion = radio_N_urgencia.value;
+    nuevoTicket.causas = causas.value;
+    nuevoTicket.reporte = reporte.value;
+    nuevoTicket.resolucion = resolucion.value;
 
     // Hacer push al array de dev
     tickets_dev.push(nuevoTicket);
+    registrada.value = true;
   }else{
     // Hacer push al array usuarios
     tickets_users.push(nuevoTicket);
+    registrada.value = true;
   }
 
   // Opcional: Limpiar el formulario después de enviar
@@ -69,8 +77,9 @@ const handleSubmit = () => {
   radio_impacto.value = '';
   radio_tipo_incidencia.value = '';
   radio_N_urgencia.value = '';
-
-  registrada.value = true;
+  causas.value = '';
+  reporte.value = '';
+  resolucion.value = '';
 };
 
 </script>
@@ -177,6 +186,21 @@ const handleSubmit = () => {
       <label class="label_option" for="3_N_urgencia">
         <input v-model="radio_N_urgencia" value="Bajo" type="radio" id="3_N_urgencia" name="radio_N_urgencia" />Bajo
       </label>
+
+    </div>
+
+    <div class="form_section" v-if="mostrarDesarrolladores">
+
+      <label class="label_title">Otros datos sobre la incidencia</label>
+
+      <label for="causas" class="label_sub_title">Posibles causas</label>
+      <textarea id="cy_causas" v-model="causas" required class="input_element" name="causas" ></textarea>
+
+      <label for="reporte" class="label_sub_title">Reporte de la situación</label>
+      <textarea id="cy_reporte" v-model="reporte" required class="input_element" name="reporte" ></textarea>
+
+      <label for="resolucion" class="label_sub_title">Resolución</label>
+      <textarea id="cy_resolucion" v-model="resolucion" required class="input_element" name="resolucion" ></textarea>
 
     </div>
 

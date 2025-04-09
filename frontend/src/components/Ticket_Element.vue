@@ -59,6 +59,10 @@ const eliminarTicket = () => {
             <li><strong>Impacto en el negocio:</strong> {{ ticketData.impacto_en_el_negocio }}</li>
             <li><strong>Tipo de incidencia:</strong> {{ ticketData.tipo_de_incidencia }}</li>
             <li><strong>Priorización:</strong> {{ ticketData.priorizacion }}</li>
+
+            <li><strong>Posibles Causas:</strong> {{ ticketData.causas }}</li>
+            <li><strong>Reporte:</strong> {{ ticketData.reporte }}</li>
+            <li><strong>Resolución:</strong> {{ ticketData.resolucion }}</li>
           </div>
           <li><strong>Estado:</strong> {{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
 
