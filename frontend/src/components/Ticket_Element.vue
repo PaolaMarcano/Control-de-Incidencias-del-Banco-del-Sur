@@ -37,30 +37,30 @@ const eliminarTicket = () => {
       <div class="ticket_section">
         <h2>Datos del usuario</h2>
         <ul>
-          <li><strong>Nombre:</strong>{{ ticketData.nombre }}</li>
-          <li><strong>Teléfono:</strong>{{ ticketData.telefono }}</li>
-          <li><strong>Correo:</strong>{{ ticketData.correo }}</li>
+          <li><strong>Nombre:</strong> {{ ticketData.nombre }}</li>
+          <li><strong>Teléfono:</strong> {{ ticketData.telefono }}</li>
+          <li><strong>Correo:</strong> {{ ticketData.correo }}</li>
         </ul>
       </div>
 
       <div class="ticket_section">
         <h2>Registro de la Incidencia</h2>
         <ul>
-          <li><strong>Título:</strong>{{ ticketData.titulo }}</li>
-          <li><strong>Descripción:</strong>{{ ticketData.descripcion }}</li>
-          <li><strong>Fecha y hora:</strong>{{ ticketData.fecha_y_hora }}</li>
-          <li><strong>Ubicación:</strong>{{ ticketData.ubicacion }}</li>
+          <li><strong>Título:</strong> {{ ticketData.titulo }}</li>
+          <li><strong>Descripción:</strong> {{ ticketData.descripcion }}</li>
+          <li><strong>Fecha y hora:</strong> {{ ticketData.fecha_y_hora }}</li>
+          <li><strong>Ubicación:</strong> {{ ticketData.ubicacion }}</li>
 
           <!-- Partes para desarrolladores -->
         
           <div v-if="mostrarDesarrolladores">
-            <li><strong>Número de identificación del equipo:</strong>{{ ticketData.identificador }}</li>
-            <li><strong>Equipo responsable de la gestión:</strong>{{ ticketData.responsable }}</li>
-            <li><strong>Impacto en el negocio:</strong>{{ ticketData.impacto_en_el_negocio }}</li>
-            <li><strong>Tipo de incidencia:</strong>{{ ticketData.tipo_de_incidencia }}</li>
-            <li><strong>Priorización:</strong>{{ ticketData.priorizacion }}</li>
+            <li><strong>Número de identificación del equipo:</strong> {{ ticketData.identificador }}</li>
+            <li><strong>Equipo responsable de la gestión:</strong> {{ ticketData.responsable }}</li>
+            <li><strong>Impacto en el negocio:</strong> {{ ticketData.impacto_en_el_negocio }}</li>
+            <li><strong>Tipo de incidencia:</strong> {{ ticketData.tipo_de_incidencia }}</li>
+            <li><strong>Priorización:</strong> {{ ticketData.priorizacion }}</li>
           </div>
-          <li><strong>Estado:</strong>{{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
+          <li><strong>Estado:</strong> {{ ticketData.estado }}</li> <!-- En curso o Cerrado (Siempre empieza en curso) -->
 
         </ul>
       </div>
