@@ -12,6 +12,7 @@ const props = defineProps({
 });
 
 const mostrarDesarrolladores = ref(props.esDesarrollador);
+const registrada = ref(false);
 
 // Crear refs para los campos del formulario
 const nombre = ref('');
@@ -37,6 +38,7 @@ const handleSubmit = () => {
     descripcion: descripcion.value,
     fecha_y_hora: fecha_hora.value,
     ubicacion: ubicacion.value,
+    estado: "En curso",
   };
 
   // Agregar datos solo si el usuario es desarrollador
@@ -46,7 +48,6 @@ const handleSubmit = () => {
     nuevoTicket.impacto_en_el_negocio = radio_impacto.value;
     nuevoTicket.tipo_de_incidencia = radio_tipo_incidencia.value;
     nuevoTicket.priorizacion = radio_N_urgencia.value;
-    nuevoTicket.estado = "En curso";
 
     // Hacer push al array de dev
     tickets_dev.push(nuevoTicket);
@@ -68,6 +69,8 @@ const handleSubmit = () => {
   radio_impacto.value = '';
   radio_tipo_incidencia.value = '';
   radio_N_urgencia.value = '';
+
+  registrada.value = true;
 };
 
 </script>
@@ -178,6 +181,8 @@ const handleSubmit = () => {
     </div>
 
     <button type="submit" class="submit_button">Enviar</button>
+
+    <p v-if="registrada" class="label_title">Incidencia registrada</p>
 
   </form>
 </template>
